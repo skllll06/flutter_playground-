@@ -1,0 +1,22 @@
+name: flutter_playground
+
+sdkPath: .fvm/flutter_sdk
+
+packages:
+  - packages/**
+version:
+  linkToCommits: true
+  workspaceChangelog: true
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+    runPubGetInParallel: false
+
+scripts:
+  analyze:
+    exec: dart analyze .
+
+  lint:all:
+    run: melos run analyze && melos run format
+    description: Run all static analysis checks.
