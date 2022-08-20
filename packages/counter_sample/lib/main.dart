@@ -70,6 +70,10 @@ class _CounterPageState extends State<CounterPage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
               ),
+              TextButton(
+                onPressed: _resetCounter,
+                child: Text('Reset'),
+              )
             ],
           ),
         ),
