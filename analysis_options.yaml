@@ -1,4 +1,3 @@
-include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
@@ -20,7 +19,7 @@ linter:
     - sort_child_properties_last
     - eol_at_end_of_file
     - comment_references
-    - sort_pub_dependencies
+#    - sort_pub_dependencies
     - type_annotate_public_apis
     - unawaited_futures
     - unnecessary_lambdas
