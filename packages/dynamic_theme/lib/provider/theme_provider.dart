@@ -11,10 +11,31 @@ final themeModeProvider = FutureProvider<ThemeData>((ref) async {
       ? ThemeData.dark().copyWith(
           primaryColor: primaryColor,
           appBarTheme: AppBarTheme(color: primaryColor),
+          switchTheme: SwitchThemeData(
+            thumbColor: MaterialStateProperty.all<Color>(primaryColor),
+            trackColor: MaterialStateProperty.all<Color>(primaryColor),
+            overlayColor: MaterialStateProperty.all<Color>(primaryColor),
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(primary: primaryColor),
+          ),
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(backgroundColor: primaryColor),
         )
       : ThemeData.light().copyWith(
           primaryColor: primaryColor,
           appBarTheme: AppBarTheme(color: primaryColor),
+          switchTheme: SwitchThemeData(
+            thumbColor: MaterialStateProperty.all<Color>(primaryColor),
+            trackColor: MaterialStateProperty.all<Color>(primaryColor),
+            overlayColor: MaterialStateProperty.all<Color>(primaryColor),
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(primary: primaryColor),
+          ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: primaryColor,
+          ),
         );
 });
 
@@ -36,7 +57,7 @@ class ThemePrimaryColorController extends StateNotifier<Color> {
         PreferenceKey.primaryColor.setString(val);
         break;
       case 'yellow':
-        state = Colors.yellow;
+        state = Colors.lime;
         PreferenceKey.primaryColor.setString(val);
         break;
       case 'pink':

@@ -19,7 +19,7 @@ class MyApp extends ConsumerWidget {
       data: (themeData) {
         return MaterialApp(
           theme: themeData,
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          home: const MyHomePage(title: 'Dynamically Theme'),
         );
       },
       error: (error, stack) => Text('$error'),
@@ -37,10 +37,19 @@ class MyHomePage extends ConsumerWidget {
       appBar: AppBar(
         title: Text(title),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.tag_faces,
+          color: Colors.white,
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+                onPressed: () {}, child: const Text('I am a Button')),
             Switch(
                 value: ref.watch(isDarkProvider),
                 onChanged: ref.watch(isDarkProvider.notifier).toggleThemeMode),
@@ -62,7 +71,7 @@ class MyHomePage extends ConsumerWidget {
                 )),
                 Expanded(
                     child: ColorSelectButton(
-                  color: Colors.yellow,
+                  color: Colors.lime,
                   handleOnTap: () => ref
                       .watch(themePrimaryColorProvider.notifier)
                       .togglePrimaryColor('yellow'),
@@ -126,7 +135,7 @@ class LoadingView extends StatelessWidget {
           color: Colors.black87,
           child: const Center(
             child: Text(
-              'Loading...',
+              'テーマが変わるよ',
               style: TextStyle(
                   color: Colors.white70,
                   fontSize: 23,
